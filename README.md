@@ -5,3 +5,6 @@ Webseries From themoviesflix.in.net ('Amazing Website') The Problem This Script 
 2. The Least No. of Inputs Is Required.
 3. Saves All Of yours Web-Series Episodes In One Folder.
 
+# To Install The Required Libraries
+Use : pip3 install -r requirements.txt
+
