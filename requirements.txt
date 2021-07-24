@@ -1,0 +1,12 @@
+beautifulsoup4==4.9.3
+bs4==0.0.1
+certifi==2021.5.30
+chardet==4.0.0
+idna==2.10
+pyfiglet==0.8.post1
+requests==2.25.1
+selenium==3.141.0
+soupsieve==2.2.1
+termcolor==1.1.0
+termcolour==0.0.1
+urllib3==1.26.5
