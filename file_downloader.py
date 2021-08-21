@@ -1,11 +1,22 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import requests
-from pyfiglet import Figlet
-from termcolor import colored
-# PRINT
-f = Figlet(font='doom')
-print(colored(f.renderText('THE MOVIE DOWNLOADER') ,'red',))
+
+print("""
+ _____ _   _  _____  ___  ________  _   _ _____ _____ 
+|_   _| | | ||  ___| |  \/  |  _  || | | |_   _|  ___|
+  | | | |_| || |__   | .  . | | | || | | | | | | |__  
+  | | |  _  ||  __|  | |\/| | | | || | | | | | |  __| 
+  | | | | | || |___  | |  | \ \_/ /\ \_/ /_| |_| |___ 
+  \_/ \_| |_/\____/  \_|  |_/\___/  \___/ \___/\____/ 
+
+______ _____  _    _ _   _  _     _____  ___ ______ ___________ 
+|  _  \  _  || |  | | \ | || |   |  _  |/ _ \|  _  \  ___| ___ ?
+| | | | | | || |  | |  \| || |   | | | / /_\ \ | | | |__ | |_/ /
+| | | | | | || |/\| | . ` || |   | | | |  _  | | | |  __||    / 
+| |/ /\ \_/ /\  /\  / |\  || |___\ \_/ / | | | |/ /| |___| |\ \ 
+|___/  \___/  \/  \/\_| \_/\_____/\___/\_| |_/___/ \____/\_| \_|
+""")
 # GETTING THE WEBSITE
 searchable = input('please enter the movie or webseries to search: ')
 website_to_fire = "https://themoviesflix.in.net/"
@@ -17,7 +28,7 @@ current_page_url = driver.current_url
 all_window_handles = driver.window_handles
 driver.switch_to.window(all_window_handles[1])
 driver.close()
-# GETTINF THE NAMES & LINKS OF MOVIES & WEB-SERIES
+# GETTING THE NAMES & LINKS OF MOVIES & WEB-SERIES
 def names_and_links():
     ch = "category"
     website_to_scrape = current_page_url
@@ -45,8 +56,8 @@ url_to_click = input("please enter the link: ")
 print("")
 requests.get(url_to_click)
 # episodes
-website_to_scrape2 = url_to_click
-source2 = requests.get(website_to_scrape2).text
+website_to_scrape1 = url_to_click
+source2 = requests.get(website_to_scrape1).text
 soup2 = BeautifulSoup(source2,'lxml')
 for data in soup2.find_all('p',class_="has-text-align-center"):
     for link in data.find_all('a'):
@@ -73,3 +84,28 @@ for data5 in soup2.find_all('div',class_="wp-block-button aligncenter"):
         print(link5.get('href'))
         print(" ")
         print(link5.get_text())
+print(" ")
+next_link = input("ENTER THE NEXT LINK TO PROCEED WITH: ")
+website_to_scrape2 = next_link
+source3 = requests.get(website_to_scrape2).text
+soup3 = BeautifulSoup(source3,'lxml')
+for data34 in soup3.find_all('span',class_="maxbutton-7-container mb-container"):
+    for link456 in data34.find_all('a'):
+        print(link456.get('href'))
+        print(" ")
+        print(link456.get_text())
+for data25 in soup3.find_all('span',class_="maxbutton-2-container mb-container"):
+    for link6871 in data25.find_all('a'):
+        print(link6871.get('href'))
+        print(" ")
+        print(link6871.get_text())
+for data39 in soup3.find_all('span',class_="maxbutton-35-container mb-container"):
+    for link2069 in data39.find_all('a'):
+        print(link2069.get('href'))
+        print(" ")
+        print(link2069.get_text())
+next_next_link = input("PLEASE ENTER THE NEXT LINK AGAIN: ")
+page = requests.get(next_next_link).text
+soup = BeautifulSoup(page,'lxml')
+onclick_link = soup.find('div',class_="col-md-12 text-center")
+print(onclick_link)
