@@ -1,5 +1,5 @@
 
-# But I Am Going To Tell You How To Use It.
+# You How To Use It.
 1. Clone The Repository.`
 2. `cd TheMoviesDownloader`
 3. `Python3 filedownloader.py` You Need to use Python3 Instead Of Python In Linux.
