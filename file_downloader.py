@@ -1,6 +1,7 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import requests
+import os
 
 print("""
  _____ _   _  _____  ___  ________  _   _ _____ _____ 
@@ -17,6 +18,22 @@ ______ _____  _    _ _   _  _     _____  ___ ______ ___________
 | |/ /\ \_/ /\  /\  / |\  || |___\ \_/ / | | | |/ /| |___| |\ \ 
 |___/  \___/  \/  \/\_| \_/\_____/\___/\_| |_/___/ \____/\_| \_|
 """)
+def chromedriver_availability():
+    directory_for_linux = os.getcwd()
+    # print(f"Your Current Directory Is: {directory_for_linux}")
+    path_to_chromedriver= "/usr/bin"
+    all_files = os.listdir(path_to_chromedriver)
+    # print(all_files)
+    if "chromedriver" in all_files:
+        return True
+    else:
+        print("*************************************")
+        print('fuck you go and install chromedriver')
+        print("*************************************")
+if chromedriver_availability() == True:
+    print("*************************************")
+    print('good to go')
+    print("*************************************")
 # GETTING THE WEBSITE
 searchable = input('please enter the movie or webseries to search: ')
 website_to_fire = "https://themoviesflix.in.net/"
