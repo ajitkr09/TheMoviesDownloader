@@ -79,7 +79,7 @@ soup2 = BeautifulSoup(source2,'lxml')
 for data in soup2.find_all('p',class_="has-text-align-center"):
     for link in data.find_all('a'):
         print(link.get('href'))
-        print(" ")
+        print("")
         print(link.get_text())
 for data2 in soup2.find_all('span',class_="mb-center maxbutton-3-center"):
     for link2 in data2.find_all('a'):
@@ -106,11 +106,54 @@ next_link = input("ENTER THE NEXT LINK TO PROCEED WITH: ")
 website_to_scrape2 = next_link
 source3 = requests.get(website_to_scrape2).text
 soup3 = BeautifulSoup(source3,'lxml')
-for data34 in soup3.find_all('span',class_="maxbutton-7-container mb-container"):
-    for link456 in data34.find_all('a'):
-        print(link456.get('href'))
+for data2 in soup3.find_all('span',class_="maxbutton-7-container mb-container"):
+    for link2 in data2.find_all('a'):
+        print(link2.get_text())
+        print(link2.get('href'))
         print(" ")
-        print(link456.get_text())
+for data3 in soup3.find_all('span',class_="maxbutton-8-container mb-container"):
+    for link3 in data3.find_all('a'):
+        print(link3.get_text())
+        print(link3.get('href'))
+        print(" ")
+for data4 in soup3.find_all('span',class_="maxbutton-9-container mb-container"):
+    for link4 in data4.find_all('a'):
+        print(link4.get_text())
+        print(link4.get('href'))
+        print(" ")
+for data5 in soup3.find_all('span',class_="maxbutton-10-container mb-container"):
+    for link5 in data5.find_all('a'):
+        print(link5.get_text())
+        print(link5.get('href'))
+        print(" ")
+for data6 in soup3.find_all('span',class_="maxbutton-11-container mb-container"):
+    for link6 in data6.find_all('a'):
+        print(link6.get_text())
+        print(link6.get('href'))
+        print(" ")
+
+for data7 in soup3.find_all('span',class_="maxbutton-12-container mb-container"):
+    for link7 in data7.find_all('a'):
+        print(link7.get_text())
+        print(link7.get('href'))
+        print(" ")
+
+for data8 in soup3.find_all('span',class_="maxbutton-13-container mb-container"):
+    for link8 in data8.find_all('a'):
+        print(link8.get_text())
+        print(link8.get('href'))
+        print(" ")
+
+for data9 in soup3.find_all('span',class_="maxbutton-14-container mb-container"):
+    for link9 in data9.find_all('a'):
+        print(link9.get_text())
+        print(link9.get('href'))
+        print(" ")
+# for data34 in soup3.find_all('span',class_="maxbutton-7-container mb-container"):
+#     for link456 in data34.find_all('a'):
+#         print(link456.get('href'))
+#         print(" ")
+#         print(link456.get_text())
 for data25 in soup3.find_all('span',class_="maxbutton-2-container mb-container"):
     for link6871 in data25.find_all('a'):
         print(link6871.get('href'))
