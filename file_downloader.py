@@ -2,7 +2,6 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import requests
 import os
-
 print("""
  _____ _   _  _____  ___  ________  _   _ _____ _____ 
 |_   _| | | ||  ___| |  \/  |  _  || | | |_   _|  ___|
@@ -78,29 +77,29 @@ source2 = requests.get(website_to_scrape1).text
 soup2 = BeautifulSoup(source2,'lxml')
 for data in soup2.find_all('p',class_="has-text-align-center"):
     for link in data.find_all('a'):
+        print(link.get_text())
         print(link.get('href'))
         print("")
-        print(link.get_text())
 for data2 in soup2.find_all('span',class_="mb-center maxbutton-3-center"):
     for link2 in data2.find_all('a'):
+        print(link2.get_text())
         print(link2.get('href'))
         print(" ")
-        print(link2.get_text())
 for data3 in soup2.find_all('span',class_="maxbutton-6-container mb-container"):
     for link3 in data3.find_all('a'):
+        print(link3.get_text())
         print(link3.get('href'))
         print(" ")
-        print(link3.get_text())
 for data4 in soup2.find_all('span',class_="maxbutton-13-container mb-container"):
     for link4 in data4.find_all('a'):
+        print(link4.get_text())
         print(link4.get('href'))
         print(" ")
-        print(link4.get_text())
 for data5 in soup2.find_all('div',class_="wp-block-button aligncenter"):
     for link5 in data5.find_all('a'):
+        print(link5.get_text())
         print(link5.get('href'))
         print(" ")
-        print(link5.get_text())
 print(" ")
 next_link = input("ENTER THE NEXT LINK TO PROCEED WITH: ")
 website_to_scrape2 = next_link
@@ -149,23 +148,30 @@ for data9 in soup3.find_all('span',class_="maxbutton-14-container mb-container")
         print(link9.get_text())
         print(link9.get('href'))
         print(" ")
-# for data34 in soup3.find_all('span',class_="maxbutton-7-container mb-container"):
-#     for link456 in data34.find_all('a'):
-#         print(link456.get('href'))
-#         print(" ")
-#         print(link456.get_text())
 for data25 in soup3.find_all('span',class_="maxbutton-2-container mb-container"):
     for link6871 in data25.find_all('a'):
+        print(link6871.get_text())
         print(link6871.get('href'))
         print(" ")
-        print(link6871.get_text())
 for data39 in soup3.find_all('span',class_="maxbutton-35-container mb-container"):
     for link2069 in data39.find_all('a'):
         print(link2069.get('href'))
         print(" ")
         print(link2069.get_text())
+for data390 in soup3.find_all('span',class_="maxbutton-33-container mb-container"):
+    for link20691 in data390.find_all('a'):
+        print(link20691.get_text())
+        print(link20691.get('href'))
+        print(" ")
+for data3923 in soup3.find_all('span',class_="maxbutton-32-container mb-container"):
+    for link206945 in data3923.find_all('a'):
+        print(link206945.get_text())
+        print(link206945.get('href'))
+        print(" ")
 next_next_link = input("PLEASE ENTER THE NEXT LINK AGAIN: ")
 page = requests.get(next_next_link).text
 soup = BeautifulSoup(page,'lxml')
-onclick_link = soup.find('div',class_="col-md-12 text-center")
+onclick_link = soup.find_all('div',class_="col-md-12 text-center")
 print(onclick_link)
+onclick_link2 = soup3.find_all('div',class_='go_button')
+print(onclick_link2)
