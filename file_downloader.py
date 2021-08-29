@@ -2,6 +2,7 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import requests
 import os
+import getpass
 print("""
  _____ _   _  _____  ___  ________  _   _ _____ _____ 
 |_   _| | | ||  ___| |  \/  |  _  || | | |_   _|  ___|
@@ -17,6 +18,8 @@ ______ _____  _    _ _   _  _     _____  ___ ______ ___________
 | |/ /\ \_/ /\  /\  / |\  || |___\ \_/ / | | | |/ /| |___| |\ \ 
 |___/  \___/  \/  \/\_| \_/\_____/\___/\_| |_/___/ \____/\_| \_|
 """)
+name = getpass.getuser()
+print(name)
 def chromedriver_availability():
     directory_for_linux = os.getcwd()
     # print(f"Your Current Directory Is: {directory_for_linux}")
@@ -142,11 +145,20 @@ for data8 in soup3.find_all('span',class_="maxbutton-13-container mb-container")
         print(link8.get_text())
         print(link8.get('href'))
         print(" ")
-
-for data9 in soup3.find_all('span',class_="maxbutton-14-container mb-container"):
-    for link9 in data9.find_all('a'):
-        print(link9.get_text())
-        print(link9.get('href'))
+for data9789 in soup3.find_all('span',class_="maxbutton-14-container mb-container"):
+    for link934455 in data9789.find_all('a'):
+        print(link934455.get_text())
+        print(link934455.get('href'))
+        print(" ")
+for data9788 in soup3.find_all('span',class_="maxbutton-15-container mb-container"):
+    for link9987 in data9788.find_all('a'):
+        print(link9987.get_text())
+        print(link9987.get('href'))
+        print(" ")
+for data4209 in soup3.find_all('span',class_="maxbutton-16-container mb-container"):
+    for link456790 in data4209.find_all('a'):
+        print(link456790.get_text())
+        print(link456790.get('href'))
         print(" ")
 for data25 in soup3.find_all('span',class_="maxbutton-2-container mb-container"):
     for link6871 in data25.find_all('a'):
@@ -170,8 +182,8 @@ for data3923 in soup3.find_all('span',class_="maxbutton-32-container mb-containe
         print(" ")
 next_next_link = input("PLEASE ENTER THE NEXT LINK AGAIN: ")
 page = requests.get(next_next_link).text
-soup = BeautifulSoup(page,'lxml')
-onclick_link = soup.find_all('div',class_="col-md-12 text-center")
+soup24 = BeautifulSoup(page,'lxml')
+onclick_link = soup24.find('div',class_="col-md-12 text-center")
 print(onclick_link)
-onclick_link2 = soup3.find_all('div',class_='go_button')
+onclick_link2 = soup24.find('div',class_='go_button')
 print(onclick_link2)
